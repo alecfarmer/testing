@@ -9,7 +9,7 @@ jobs:
     name: build
     runs-on: ubuntu-latest
     env:
-      working-directory: ./stylemail
+      working-directory: stylemail
 
     steps:
       - name: Checkout Repo
@@ -19,4 +19,4 @@ jobs:
         run: npm install
         working-directory: ${{env.working-directory}}
       - name: build
-        run: npm run build 
+        run: npm run build

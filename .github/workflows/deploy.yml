@@ -10,7 +10,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     env:
-      working-directory: ./stylemail
+      working-directory: stylemail
 
     steps:
       - name: Checkout Repo
