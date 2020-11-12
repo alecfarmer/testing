@@ -4,21 +4,21 @@ on:
   push:
     branches: [ master ]
 
+defaults:
+  run:
+    working-directory: stylemail
+
 jobs:
   deploy:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    env:
-      working-directory: stylemail
 
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
-        working-directory: ${{env.working-directory}}
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
-        working-directory: ${{env.working-directory}}
         with:
           args: deploy --only hosting
         env:

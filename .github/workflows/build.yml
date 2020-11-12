@@ -4,19 +4,19 @@ on:
   push:
     branches: [ master ]
 
+defaults:
+  run:
+    working-directory: stylemail
+
 jobs:
   build:
     name: build
     runs-on: ubuntu-latest
-    env:
-      working-directory: stylemail
 
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
-        working-directory: ${{env.working-directory}}
       - name: Install Dependencies
         run: npm install
-        working-directory: ${{env.working-directory}}
       - name: build
         run: npm run build
