@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
-      working-directory: ./StyleMail/stylemail  
+      working-directory: ./stylemail  
         with:
           node-version: 12  
       - run: npm ci
@@ -21,3 +21,4 @@ jobs:
           args: deploy --only hosting
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_PROJECT: fir-test-400dc
