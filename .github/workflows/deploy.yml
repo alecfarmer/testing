@@ -17,8 +17,8 @@ jobs:
         with:
           node-version: 12  
       - run: |
-        npm ci
-        npm run build
+          npm ci
+          npm run build
       working-directory: ${{env.working-directory}}
       - uses: w9jds/firebase-action@master
         with:
