@@ -6,7 +6,7 @@ on:
 
 defaults:
   run:
-    working-directory: stylemail
+    working-directory: ./stylemail
 
 jobs:
   test_pull_request:
