@@ -28,9 +28,9 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_STYLEMAIL_EDF5F }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FIR-TEST-400DC }}'
           channelId: live
-          projectId: stylemail-edf5f
+          projectId: fir-test-400dc
           entryPoint: "./stylemail" 
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
