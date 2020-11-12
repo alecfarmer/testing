@@ -1,13 +1,12 @@
-name: Deploy
+name: Build
 
 on:
   push:
     branches: [ master ]
 
 jobs:
-  deploy:
-    name: Deploy
-    needs: build
+  build:
+    name: build
     runs-on: ubuntu-latest
     env:
       working-directory: ./stylemail
@@ -16,10 +15,8 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
         working-directory: ${{env.working-directory}}
-      - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
+      - name: Install Dependencies
+        run: npm install
         working-directory: ${{env.working-directory}}
-        with:
-          args: deploy --only hosting
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: build
+        run: npm run build 
