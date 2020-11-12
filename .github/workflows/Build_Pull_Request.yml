@@ -1,7 +1,7 @@
-name: Build
+name: Build on Pull Request
 
 on:
-  push:
+  pull_request:
     branches: [ main ]
 
 defaults:
