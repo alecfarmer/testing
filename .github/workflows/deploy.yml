@@ -8,14 +8,18 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./stylemail
+
     steps:
       - uses: actions/checkout@master
-      - uses: actions/setup-node@master
-      working-directory: ./stylemail  
+      - uses: actions/setup-node@master  
         with:
           node-version: 12  
-      - run: npm ci
-      - run: npm run build
+      - run: |
+        npm ci
+        npm run build
+      working-directory: ${{env.working-directory}}
       - uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting

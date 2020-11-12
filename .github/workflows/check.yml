@@ -8,13 +8,16 @@ on:
 jobs:
   test_pull_request:
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./stylemail
+
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      working-directory: ./StyleMail/stylemail
         with:
           node-version: 12
-      working-directory: ./StyleMail/stylemail
-      - run: npm ci
-      - run: npm test
-      - run: npm run build
+      - run: |
+        npm ci
+        npm test
+        npm run build
+      working-directory: ${{env.working-directory}}
