@@ -25,12 +25,12 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>StyleMail Login</h1>
+        <h1>Test login</h1>
         <SignOut />
       </header>
 
       <section>
-        {user ? <Test /> : <SignIn />}
+        {user ? <Test/> : <SignIn />}
       </section>
 
     </div>
