@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+//import React, { useRef, useState } from 'react';
 import './App.css';
 
 import firebase from 'firebase/app';
@@ -40,17 +40,34 @@ function App() {
 function SignIn() {
 
   const signInWithGoogle = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider);
+    const googleProvider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(googleProvider);
+  }
+
+  const signInWithFacebook = () => {
+    const facebookProvider = new firebase.auth.FacebookAuthProvider();
+    auth.signInWithPopup(facebookProvider);
+  }
+
+  const signInWithTwitter = () => {
+    const twitterProvider = new firebase.auth.TwitterAuthProvider();
+    auth.signInWithPopup(twitterProvider);
+  }
+
+  const signInWithGithub = () => {
+    const githubProvider = new firebase.auth.GithubAuthProvider();
+    auth.signInWithPopup(githubProvider);
   }
 
   return (
     <>
       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
+      <button className="sign-in" onClick={signInWithFacebook}>Sign in with Facebook</button>
+      <button className="sign-in" onClick={signInWithTwitter}>Sign in with Twitter</button>
+      <button className="sign-in" onClick={signInWithGithub}>Sign in with GitHub</button>
       <p>Please login.</p>
     </>
   )
-
 }
 
 function SignOut() {
