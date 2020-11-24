@@ -96,7 +96,7 @@ const signInWithGithub = () => {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
-            <Button className="w-100" onClick={signInWithGoogle} type="button">Google</Button>
+            <Button className="w-100" type="button">Google</Button>
             <Button className="w-100" type="button">Facebook</Button>
             <Button className="w-100" type="button">Twitter</Button>
             <Button className="w-100" type="button">GitHub</Button>
