@@ -19,11 +19,6 @@ export function AuthProvider({ children }) {
     return auth.signInWithEmailAndPassword(email, password)
   }
 
-  function googleLogin() {
-    const googleProvider = new auth.GoogleAuthProvider();
-    return auth.signInWithPopup(googleProvider)
-  }
-
   function logout() {
     return auth.signOut()
   }
