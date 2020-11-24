@@ -61,6 +61,13 @@ export default function Login() {
     )
   }
 
+</Form.Group>
+            <Button className="w-100" type="button">Google</Button>
+            <Button className="w-100" type="button">Facebook</Button>
+            <Button className="w-100" type="button">Twitter</Button>
+            <Button className="w-100" type="button">GitHub</Button>
+<Form.Group>
+
 const signInWithGoogle = () => {
   const googleProvider = new app.auth.GoogleAuthProvider();
   app.auth.signInWithPopup(googleProvider);
@@ -95,12 +102,6 @@ const signInWithGithub = () => {
             <Form.Group id="password">
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
-            </Form.Group>
-            <Button className="w-100" type="button">Google</Button>
-            <Button className="w-100" type="button">Facebook</Button>
-            <Button className="w-100" type="button">Twitter</Button>
-            <Button className="w-100" type="button">GitHub</Button>
-            <Form.Group>
             </Form.Group>
             <Button disabled={loading} className="w-100" type="submit">
               Log In
