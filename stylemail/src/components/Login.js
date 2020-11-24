@@ -1,9 +1,8 @@
 import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
-import { useAuth } from "../contexts/AuthContext"
+import { useAuth, googleLogin } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 import "../firebase.js"
-//import app from "../firebase.js"
 
 export default function Login() {
   const emailRef = useRef()
@@ -102,6 +101,12 @@ const signInWithGithub = () => {
             <Form.Group id="password">
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
+            </Form.Group>
+            <Form.Group>
+            <Button className="w-100" onClick={googleLogin} type="button">Google</Button>
+            <Button className="w-100" type="button">Facebook</Button>
+            <Button className="w-100" type="button">Twitter</Button>
+            <Button className="w-100" type="button">GitHub</Button>
             </Form.Group>
             <Button disabled={loading} className="w-100" type="submit">
               Log In
