@@ -28,8 +28,8 @@ export default function Login() {
   }
 
   function googleLogin() {
-    const googleProvider = new auth.GoogleAuthProvider();
-    return auth.signInWithPopup(googleProvider)
+    var googleProvider = new auth.GoogleAuthProvider();
+    auth.signInWithPopup(googleProvider);
   }
 /*
   function SignIn() {
