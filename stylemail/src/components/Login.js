@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
-import { auth } from "../firebase"
+import { auth, app } from "../firebase"
 
 export default function Login() {
   const emailRef = useRef()
@@ -28,7 +28,7 @@ export default function Login() {
   }
 
   function googleLogin() {
-    var googleProvider = new auth.GoogleAuthProvider();
+    var googleProvider = new app.auth.GoogleAuthProvider();
     auth.signInWithPopup(googleProvider);
   }
 /*
