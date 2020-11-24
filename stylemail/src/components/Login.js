@@ -3,7 +3,7 @@ import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 import "../firebase.js"
-import app from "../firebase.js"
+//import app from "../firebase.js"
 
 export default function Login() {
   const emailRef = useRef()
