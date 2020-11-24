@@ -4,6 +4,7 @@ import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 import { auth } from "../firebase"
 import app from "../firebase"
+import App from "./App"
 
 export default function Login() {
   const emailRef = useRef()
@@ -26,11 +27,6 @@ export default function Login() {
     }
 
     setLoading(false)
-  }
-
-  function googleLogin() {
-    var googleProvider = new app.auth.GoogleAuthProvider();
-    auth.signInWithPopup(googleProvider);
   }
 /*
   function SignIn() {
@@ -109,7 +105,18 @@ const signInWithGithub = () => {
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
             <Form.Group>
-            <Button className="w-100" onClick={googleLogin} type="button">Google</Button>
+            <Button 
+         onClick={() => { 
+           
+     // Google provider object is created here. 
+    const googleAuth =  
+          new app.auth.GoogleAuthProvider(); 
+               
+    // using the object we will authenticate the user. 
+    app.auth().signInWithPopup(googleAuth); 
+                    }} > 
+          Sign in with Google 
+    </Button> 
             <Button className="w-100" type="button">Facebook</Button>
             <Button className="w-100" type="button">Twitter</Button>
             <Button className="w-100" type="button">GitHub</Button>
